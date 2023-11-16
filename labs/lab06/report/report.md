@@ -124,7 +124,7 @@ header-includes:
 
 ![Результат работы программы](image/11.png){#fig:011 width=70%}
 
-12. Замените функцию iprintLF на iprint.{@fig:012 width=70%}
+12. Заменил функцию iprintLF на iprint.{@fig:012 width=70%}
 
 ![Изменёный текст программы](image/12.png){#fig:012 width=70%}
 
