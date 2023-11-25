@@ -3,10 +3,10 @@ section .data
 	msgA db 'Введите A: ',0h
 	msgB db 'Введите B: ',0h
 	msgC db 'Введите C: ',0h
-	msgM db "Наибольшее число: ",0h
+	msgM db "Наименьшее число: ",0h
 
 section .bss
-	max resb 10
+	min resb 10
 	A resb 10
 	B resb 10
 	C resb 10
@@ -49,22 +49,22 @@ _start:
 	mov [C],eax
 	
 	mov ecx, [A]
-	mov [max], ecx
+	mov [min], ecx
 	cmp ecx, [B]
-	jg check_c
+	jl check_c
 	mov ecx, [B]
-	mov [max], ecx
+	mov [min], ecx
 	
 	check_c:
 	cmp ecx, [C]
-	jg final
+	jl final
 	mov ecx, [C]
-	mov [max], ecx
+	mov [min], ecx
 	
 	final:
 	mov eax, msgM
 	call sprint
-	mov eax,[max]
+	mov eax,[min]
 	call iprintLF
 	call quit
 	
